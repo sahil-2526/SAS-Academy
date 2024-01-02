@@ -163,6 +163,7 @@ main {
 
 .ad {
     height: 95vh;
+    min-height: 20em;
     width: 100%;
     position: relative;
     justify-self: center;
@@ -459,7 +460,7 @@ footer {
         }
     }
 
-    footer {
+    footer{
         h3{
             font-size: 3.2em;
             padding: 3vw 0 4vw;
