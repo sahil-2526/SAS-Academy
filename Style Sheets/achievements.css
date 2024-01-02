@@ -208,13 +208,14 @@ main {
 }
 
 .achieve{
+    margin-top: 4em;
     text-align: center;
-    padding: 4vw 20vw;
+    padding: 3vw 20vw;
     font-size: 1.4em;
     background-color: #f0f0f0;
 
     h2{
-        font-size: 3vw;
+        font-size: 3em;
         margin-bottom: 2vw;
     }
 
@@ -354,6 +355,13 @@ footer {
         }
     }
 
+    .achieve{
+        margin-top: 3em;
+
+        h2{
+
+        }
+    }
 
     footer {
         .bgc {
