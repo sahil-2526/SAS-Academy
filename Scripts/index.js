@@ -1,9 +1,11 @@
+//For navbar
 window.addEventListener("scroll", function()    {
     var header = this.document.querySelector("header");
     header.classList.toggle("sticky", window.scrollY)
 })
 
 
+//For homepage ad
 var i = 0;
 var images = [];
 
@@ -31,3 +33,17 @@ const goNext = ()=>{
     changeImg();
 }
 window.onload = changeImg;
+
+
+//For about page gallery
+document.querySelectorAll('.slider .box').forEach(box => {
+    box.onclick = () => {
+        const popup = document.querySelector('.popup');
+        const popupImg = document.querySelector('.popup img');
+        popup.style.display = 'block';
+        popupImg.src = box.querySelector('img').src;
+    }
+});
+document.querySelector('.popup span').onclick = () => {
+    document.querySelector('.popup').style.display = 'none';
+}
