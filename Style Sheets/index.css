@@ -86,20 +86,37 @@ header {
         display: none;
         margin-right: 1em;
     }
-        
+
     #menu:checked~.menu-box {
         right: 0;
         content: '/X';
     }
 
     .menu-box {
-        height: calc(100vh - 4em);
+        height: 100vh;
         width: 100vw;
         background-color: #1d2f3b;
         position: fixed;
         bottom: 0;
         right: -100vw;
         transition: 0.4s ease;
+
+        .head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #162936;
+            margin-bottom: 5px;
+
+            .logo img {
+                height: 5em;
+            }
+
+            .material-symbols-outlined {
+                font-size: 3em;
+                color: white;
+            }
+        }
 
         ul {
             padding: 0;
@@ -151,16 +168,15 @@ main {
         position: fixed;
         right: -100%;
         bottom: 1vw;
-        height: 90vh;
-        max-height: 35em;
-        width: 17vw;
+        min-height: 30em;
+        min-width: 20em;
         background-color: #f0f0f0;
         transition: all 0.4s ease;
         box-shadow: black -8px 6px 20px -10px;
         z-index: 3;
 
         .top {
-            height: 4.5vw;
+            min-height: 4em;
             background-color: #162936;
             color: white;
             display: flex;
@@ -193,8 +209,8 @@ main {
             position: absolute;
             bottom: 0;
             width: 85%;
-            height: 2vw;
-            margin: 1vw;
+            min-height: 2.5em;
+            margin: 1em calc(15% / 2);
             border-radius: 2em;
             padding-left: 10px;
         }
@@ -205,7 +221,7 @@ main {
     }
 
     #click:checked~.chatbox {
-        right: 1vw;
+        right: 0.5em;
     }
 }
 
@@ -480,7 +496,6 @@ footer {
 
 
 @media screen and (max-width: 1440px) {
-
     header,
     header.sticky {
         background-color: #162936;
@@ -622,19 +637,6 @@ footer {
         .copyright {
             font-size: 1em;
             padding: 2em 0;
-        }
-    }
-}
-
-
-
-
-@media screen and (max-width: 850x) {
-    header {
-        height: 3em;
-
-        ul {
-            display: none;
         }
     }
 }
