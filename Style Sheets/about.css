@@ -74,10 +74,9 @@ header {
 
         li a {
             margin-left: 3vw;
-            color: #4752a7;
+            color: #1c2674;
             font-weight: bold;
             font-size: 1.6em;
-            text-shadow: -1.5px 1px 9px #0ad400;
         }
     }
 
@@ -226,7 +225,7 @@ main {
 }
 
 .vid {
-    margin-top: 5vw;
+    margin-top: 7vw;
     justify-self: center;
     width: 85vw;
 }
@@ -309,7 +308,7 @@ main {
         transform: translateX(0%);
     }
     95% {
-        transform: translateX(-100%);
+        transform: translateX(-300%);
     }
 }
 
@@ -443,7 +442,7 @@ footer {
         }
     }
 
-    
+
 
     footer {
         .bgc {
