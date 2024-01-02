@@ -311,7 +311,7 @@ main {
     }
 
     95% {
-        transform: translateX(-300%);
+        transform: translateX(-900%);
     }
 }
 
