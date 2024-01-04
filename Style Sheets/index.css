@@ -7,7 +7,7 @@ a {
     text-decoration: none;
 }
 
-button {
+button, .btn {
     cursor: pointer;
     background-color: #8CC92D;
     border: none;
@@ -421,7 +421,6 @@ footer {
             padding-top: 2vw;
             font-size: 3vw;
             color: #8CC92D;
-            ;
         }
 
         .block {
@@ -474,7 +473,7 @@ footer {
                     textarea {
                         margin: 0.5vw 0 1vw 0;
                         padding: 0.4vw;
-                        width: 100%;
+                        width: 90%;
                         border-radius: 5px;
                         resize: none;
                     }
@@ -485,12 +484,7 @@ footer {
                     }
 
                     .btn {
-                        background-color: #8CC92D;
-                        cursor: pointer;
-                        height: 3.5em;
-                        width: 8em;
-                        font-size: 1em;
-                        padding: 0;
+                        width: 7em;
                     }
                 }
             }
@@ -510,7 +504,7 @@ footer {
 
 
 @media screen and (max-width: 1440px) {
-    button{
+    button, .btn{
         height: 2.3em;
         width: 6em;
     }
@@ -643,11 +637,6 @@ footer {
                         width: 50%;
                         min-width: 15em;
                         margin: 0 auto;
-
-                        .btn {
-                            height: 2.5em;
-                            width: 6em;
-                        }
                     }
                 }
             }

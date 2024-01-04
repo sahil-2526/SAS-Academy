@@ -7,7 +7,7 @@ a{
     text-decoration: none;
 }
 
-button {
+button, .btn {
     cursor: pointer;
     background-color: #8CC92D;
     border: none;
@@ -305,12 +305,7 @@ footer {
                     }
 
                     .btn {
-                        background-color: #8CC92D;
-                        cursor: pointer;
-                        height: 3.5em;
-                        width: 8em;
-                        font-size: 1em;
-                        padding: 0;
+                        width: 7em;
                     }
                 }
             }
@@ -330,6 +325,10 @@ footer {
 
 
 @media screen and (max-width: 1440px) {
+    button, .btn {
+        height: 2.3em;
+        width: 6em;
+    }
     header{
         background-color: #162936;
         height: 4em;
@@ -403,11 +402,6 @@ footer {
                         width: 50%;
                         min-width: 15em;
                         margin: 0 auto;
-
-                        .btn {
-                            height: 2.5em;
-                            width: 6em;
-                        }
                     }
                 }
             }
