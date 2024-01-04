@@ -215,7 +215,7 @@ main {
     background-color: #f0f0f0;
 
     h2{
-        font-size: 3em;
+        font-size: 2em;
         margin-bottom: 2vw;
     }
 
@@ -357,9 +357,14 @@ footer {
 
     .achieve{
         margin-top: 3em;
+        padding: 3vw 10vw;
 
         h2{
+            font-size: 1.5em;
+        }
 
+        p{
+            font-size: 0.8em;
         }
     }
 

@@ -60,7 +60,7 @@
                     <a href="about.html">About</a>
                 </li>
                 <li>
-                    <a href="#contact">Contact Us</a>
+                    <a href="#contact" onclick="hide()">Contact Us</a>
                 </li>
                 <li>
                     <a href="login.html">Login</a>
@@ -72,7 +72,10 @@
     <main>
         <section class="ad">
             <button id="prev" onclick="goPrev()"><img src="Media/Home/prev.png" alt=""></button>
-            <img name="slide" class="slide">
+            <img name="slide" class="slide" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+            <img name="slide" class="slide" src="https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+            <img name="slide" class="slide" src="https://plus.unsplash.com/premium_photo-1671069848075-c9faefe4df18?q=80&w=1373&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+            <img name="slide" class="slide" src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
             <button id="next" onclick="goNext()"><img src="Media/Home/next.png" alt=""></button>
         </section>
         <section class="teacher">
@@ -206,7 +209,8 @@
                 <div class="left">
                     <div class="follow">
                         <p>Follow Us:</p>
-                        <a href="https://www.facebook.com/sasacademy20" target="_blank"><img src="Media/facebook.png" alt=""></a>
+                        <a href="https://www.facebook.com/sasacademy20" target="_blank"><img src="Media/facebook.png"
+                                alt=""></a>
                         <a href="" target="_blank"><img src="Media/whatsapp.png" alt=""></i></a>
                         <a href="" target="_blank"><img src="Media/gmail.png" alt=""></a>
                     </div>
@@ -223,16 +227,16 @@
                         CONTACT NO.: +919903002969, +919831158107
                     </p>
                     <form action="">
-                        <label for="name">Name <sup class="imp">*</sup></label><br>
+                        <label for="name">Name <font class="imp">*</font></label><br>
                         <input type="text" placeholder="Name" id="name" name="name" required><br>
 
-                        <label for="email">E-Mail <sup class="imp">*</sup></label><br>
+                        <label for="email">E-Mail <font class="imp">*</font></label><br>
                         <input type="email" name="email" id="email" placeholder="example@abc.com" required><br>
 
-                        <label for="phone">Phone <sup class="imp">*</sup></label><br>
+                        <label for="phone">Phone <font class="imp">*</font></label><br>
                         <input type="tel" name="phone" id="phone" placeholder="1234567890" required><br>
 
-                        <label for="sub">Subject <sup class="imp">*</sup></label><br>
+                        <label for="sub">Subject <font class="imp">*</font></label><br>
                         <select name="sub" id="sub" required>
                             <option value="" selected>Select a Subject</option>
                             <hr>
