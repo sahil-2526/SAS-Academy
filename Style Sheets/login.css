@@ -10,6 +10,7 @@ a{
 button {
     cursor: pointer;
     background-color: #8CC92D;
+    border: none;
     height: 3em;
     width: 7em;
     font-size: 1em;
@@ -214,14 +215,9 @@ main {
     justify-content: center;
 
     .left{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-sizing: content-box;
         
         img{
             width: 35vw;
-            box-sizing: content-box;
         }
     }
 
@@ -275,7 +271,6 @@ main {
                 align-self: center;
                 background-color: #007BFF;
                 color: #fff;
-                border: none;
                 padding: 10px 20px;
                 border-radius: 5px;
                 cursor: pointer;
@@ -287,15 +282,6 @@ main {
                 margin-bottom: 10px;
                 color: #333;
                 font-size: 14px;
-            }
-        }
-        
-        .create-account {
-            color: #333;
-            
-            a {
-                color: #007BFF;
-                text-decoration: none;
             }
         }
     }
@@ -404,6 +390,15 @@ footer {
 
 
 @media screen and (max-width: 1440px) {
+    main{
+        display: block;
+    }
+
+    button{
+        height: 2.3em;
+        width: 6em;
+    }
+
     header{
         background-color: #162936;
         height: 4em;
@@ -430,7 +425,50 @@ footer {
         }
     }
 
+    .container{
+        width: 100vw;
+        margin-top: 4em;
+        display: block;
 
+        .left{
+            width: 100vw;
+            img{
+                position: absolute;
+                right: 0;
+                margin: 3vw;
+                width: 14%;
+            }
+        }
+
+        .right{
+            width: 100vw;
+
+            h1{
+                font-size: 3em;
+            }
+
+            h2{
+                font-size: 1em;
+            }
+
+            .login-form{
+                margin-top: 4vw;
+                width: 80vw;
+
+                .form-group{
+                    margin-bottom: 4vw;
+
+                    input{
+                        width: 85%;
+                    }
+                }
+
+                .usertype input{
+                    width: auto;
+                }
+            }
+        }
+    }
 
     footer {
         .bgc {

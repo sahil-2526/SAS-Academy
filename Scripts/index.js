@@ -1,11 +1,11 @@
-//For navbar
+//Navbar
 window.addEventListener("scroll", function()    {
     var header = this.document.querySelector("header");
     header.classList.toggle("sticky", window.scrollY)
 });
 
 
-//For homepage ad
+//Homepage ad
 var i = 0;
 var images = document.querySelectorAll('.ad .slide');
 function changeImg() {
@@ -27,7 +27,7 @@ function goNext() {
 window.onload = changeImg;
 
 
-//For about page gallery
+//About page gallery
 document.querySelectorAll('.slider .box').forEach(box => {
     box.onclick = () => {
         const popup = document.querySelector('.popup');
@@ -36,7 +36,7 @@ document.querySelectorAll('.slider .box').forEach(box => {
         popupImg.src = box.querySelector('img').src;
     }
 });
-document.querySelector('.popup span').onclick = () => {
+document.querySelector('.popup span').onclick = document.querySelector('.popup img').onclick = () => {
     document.querySelector('.popup').style.display = 'none';
 }
 

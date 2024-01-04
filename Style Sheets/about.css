@@ -10,6 +10,7 @@ a {
 button {
     cursor: pointer;
     background-color: #8CC92D;
+    border: none;
     height: 3em;
     width: 7em;
     font-size: 1em;
@@ -233,29 +234,20 @@ main {
 .goals {
     background-color: #f0f0f0;
     text-align: center;
-    padding: 3vw 25vw;
-    font-size: 3em;
+    padding: 3vw 20vw;
+
+    h3 {
+        font-size: 4vw;
+    }
 
     ul {
-        margin-top: 3vw;
+        margin-top: 2vw;
 
         li {
-            font-size: 0.5em;
+            font-size: 1.5vw;
             margin-top: 0.5vw;
             text-align: justify;
         }
-    }
-}
-
-.created {
-    background-color: #f0f0f0;
-    text-align: center;
-    padding: 3vw 25vw;
-    font-size: 3em;
-
-    p {
-        font-size: 0.5em;
-        margin-top: 3vw;
     }
 }
 
@@ -267,14 +259,13 @@ main {
     background-color: rgb(223, 223, 194);
 
     h3 {
-        font-size: 1.5em;
+        font-size: 4vw;
         background-color: #f0f0f0;
         width: 100vw;
         padding: 3vw 0;
     }
 
     .slider {
-        height: 30vw;
         width: 95vw;
         overflow: hidden;
         display: grid;
@@ -287,6 +278,7 @@ main {
             animation: scroll 20s linear infinite;
 
             img {
+                cursor: zoom-in;
                 height: 30vw;
             }
         }
@@ -314,14 +306,15 @@ main {
         span {
             position: absolute;
             top: 0;
-            right: 2em;
+            right: 10vw;
             color: white;
-            font-size: 3em;
+            font-size: 5vw;
             font-weight: bold;
             cursor: pointer;
         }
 
         img {
+            cursor: zoom-out;
             max-height: 60em;
             height: 95vh;
             position: absolute;
@@ -447,6 +440,10 @@ footer {
 
 
 @media screen and (max-width: 1440px) {
+    button {
+        height: 2.3em;
+        width: 6em;
+    }
 
     header,
     header.sticky {
@@ -475,7 +472,40 @@ footer {
         }
     }
 
+    .vid {
+        margin-top: 4.5em;
+        width: 95vw;
+    }
 
+    .goals {
+        padding: 3vw 3.5em;
+
+        h3 {
+            font-size: 2.5em;
+        }
+
+        ul li {
+            margin-top: 2vw;
+            font-size: 1.1em;
+        }
+    }
+
+    .gallery {
+        h3 {
+            font-size: 5em;
+        }
+
+        img {
+            min-height: 50em;
+        }
+
+        .popup {
+            span {
+                top: 20vw;
+                font-size: 5em;
+            }
+        }
+    }
 
     footer {
         .bgc {

@@ -10,6 +10,7 @@ a {
 button {
     cursor: pointer;
     background-color: #8CC92D;
+    border: none;
     height: 3em;
     width: 7em;
     font-size: 1em;
@@ -509,6 +510,11 @@ footer {
 
 
 @media screen and (max-width: 1440px) {
+    button{
+        height: 2.3em;
+        width: 6em;
+    }
+
     header,
     header.sticky {
         background-color: #162936;
