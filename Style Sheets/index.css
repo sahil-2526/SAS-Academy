@@ -92,7 +92,6 @@ header {
 
     #menu:checked~.menu-box {
         right: 0;
-        content: '/X';
     }
     
     .menu-box {
