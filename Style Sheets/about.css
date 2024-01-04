@@ -421,13 +421,13 @@ footer {
                 }
             }
         }
+    }
 
-        .copyright {
-            text-align: center;
-            background-color: black;
-            color: white;
-            padding: 2vw 0;
-        }
+    .copyright {
+        text-align: center;
+        background-color: black;
+        color: white;
+        padding: 2vw 0;
     }
 }
 
@@ -551,10 +551,13 @@ footer {
 }
 
 @media screen and (max-width: 350px) {
-    .small-screen{
+    .small-screen {
         display: block;
     }
-    header, main, footer{
+
+    header,
+    main,
+    footer {
         display: none;
     }
 }
