@@ -80,7 +80,7 @@ header {
         width: 100vw;
         background-color: #1d2f3b;
         position: fixed;
-        bottom: 0;
+        top: 0;
         right: -100vw;
         transition: 0.4s ease;
 
