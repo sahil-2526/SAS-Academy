@@ -515,3 +515,12 @@ footer {
         }
     }
 }
+
+@media screen and (max-width: 350px) {
+    .small-screen{
+        display: block;
+    }
+    header, main, footer{
+        display: none;
+    }
+}

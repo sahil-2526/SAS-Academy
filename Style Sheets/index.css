@@ -16,6 +16,10 @@ button, .btn {
     font-size: 1em;
 }
 
+:root{
+    --tab-colors: #f0f0f0;
+}
+
 .small-screen {
     position: fixed;
     top: 0;
@@ -243,8 +247,12 @@ main {
         z-index: 1;
         top: 50%;
         opacity: 30%;
-    }
 
+        img{
+            height: 5em;
+        }
+    }
+    
     #next {
         right: 0;
     }
@@ -263,14 +271,13 @@ main {
     h3 {
         text-align: center;
         font-size: 3.5em;
-        background-color: #f0f0f0;
+        background-color: var(--tab-colors);
         width: 100vw;
         padding: 3vw 0;
     }
 
     .slider {
-        margin-top: 2vw;
-        padding-top: 1vw;
+        padding: 5vw 0 2vw;
         display: grid;
         justify-self: center;
         grid-auto-flow: column;
@@ -305,11 +312,12 @@ main {
 }
 
 .teacher .slider .box img {
-    transition: transform 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .teacher .slider .box:hover img {
     transform: scale(1.1);
+    box-shadow: 0 0 6em rgb(115, 186, 207);
 }
 
 .teacher .slider::-webkit-scrollbar {
@@ -330,8 +338,7 @@ main {
 
 .title {
     text-align: center;
-    margin-top: 2em;
-    background-color: #f0f0f0;
+    background-color: var(--tab-colors);
 
     p {
         margin-top: 3vw;
@@ -386,7 +393,7 @@ main {
 }
 
 .about {
-    background-color: #f0f0f0;
+    background-color: var(--tab-colors);
     text-align: center;
     padding: 4vw;
 
@@ -545,8 +552,6 @@ footer {
         }
 
         .slider {
-            gap: 3vw;
-
             .box img {
                 height: 9em;
                 width: 9em;
@@ -569,7 +574,7 @@ footer {
         gap: 1vw;
 
         .tile {
-            width: 60vw;
+            width: 80vw;
             min-height: 25em;
 
             ul {
@@ -645,5 +650,15 @@ footer {
             font-size: 1em;
             padding: 2em 0;
         }
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .small-screen{
+        display: block;
+    }
+    
+    header, main, footer{
+        display: none;
     }
 }
