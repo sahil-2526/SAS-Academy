@@ -215,7 +215,6 @@ main {
     justify-content: center;
 
     .left{
-        
         img{
             width: 35vw;
         }
@@ -285,10 +284,6 @@ main {
             }
         }
     }
-
-
-
-
 }
 
 footer {
@@ -431,11 +426,12 @@ footer {
                 position: absolute;
                 right: 0;
                 margin: 3vw;
-                width: 14%;
+                width: 20%;
             }
         }
 
         .right{
+            height: 40em;
             width: 100vw;
 
             h1{
