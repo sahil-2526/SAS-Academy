@@ -1,3 +1,5 @@
+<?php include("connection.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,23 +21,23 @@
     </div>
 
     <header>
-        <div class="logo"><a href="index.html"><img src="Media/Logo.jpg" alt=""></a></div>
+        <div class="logo"><a href="index.php"><img src="Media/Logo.jpg" alt=""></a></div>
         <nav>
             <ul>
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="index.php">Home</a>
                 </li>
                 <li>
-                    <a href="achievements.html">Achievemets</a>
+                    <a href="achievements.php">Achievemets</a>
                 </li>
                 <li>
-                    <a href="about.html">About</a>
+                    <a href="about.php">About</a>
                 </li>
                 <li>
                     <a href="#contact">Contact Us</a>
                 </li>
                 <li>
-                    <a href="login.html">Login</a>
+                    <a href="login.php">Login</a>
                 </li>
             </ul>
         </nav>
@@ -44,26 +46,26 @@
         <input type="checkbox" id="menu">
         <div class="menu-box">
             <div class="head">
-                <div class="logo"><a href="index.html"><img src="Media/Logo.jpg" alt=""></a></div>
+                <div class="logo"><a href="index.php"><img src="Media/Logo.jpg" alt=""></a></div>
                 <label for="menu">
                     <span class="material-symbols-outlined">close</span>
                 </label>
             </div>
             <ul>
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="index.php">Home</a>
                 </li>
                 <li>
-                    <a href="achievements.html">Achievemets</a>
+                    <a href="achievements.php">Achievemets</a>
                 </li>
                 <li>
-                    <a href="about.html">About</a>
+                    <a href="about.php">About</a>
                 </li>
                 <li>
                     <a href="#contact" onclick="hide()">Contact Us</a>
                 </li>
                 <li>
-                    <a href="login.html">Login</a>
+                    <a href="login.php">Login</a>
                 </li>
             </ul>
         </div>
@@ -182,7 +184,7 @@
                 Our journey was initiated in 2015 by Mr. Saikat Chakroborty and Mr. Arup Nath by offering courses on
                 Computer Science/Application and Commerce. Today we are highly recognized to offer guidance to the
                 students of all boards- ICSE, CBSE, WBBSE to enlighten their careers with the dreamt success.</p>
-            <a href="about.html"><button>Read More</button></a>
+            <a href="about.php"><button>Read More</button></a>
 
             <span id="contact"></span>
         </section>
@@ -220,13 +222,13 @@
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="right">
-                    <p class="address">ADDRESS: J-22/C/1 Paharpur Road, Garden Reach, Kolkata-700024<br>
-                        LANDMARK: Near Sailasree Cinema Hall<br>
+                    <p class="address">ADDRESS: 1st Floor, M-126/J Paharpur Road, Kolkata-700024<br>
+                        LANDMARK: Beside Unipon Hospital<br>
                         BUSINESS WEBSITE: <a
                             href="https://sas-academy-education.business.site/">sas-academy-education.business.site</a><br>
                         CONTACT NO.: +919903002969, +919831158107
                     </p>
-                    <form action="javascript:void(0);" onsubmit="submitForm()">
+                    <form action="#" method="POST>
                         <label for="name">Name <font class="imp">*</font></label><br>
                         <input type="text" placeholder="Name" id="name" name="name" required><br>
 
@@ -279,3 +281,30 @@
 </body>
 
 </html>
+
+<?php
+if(isset($_POST['submit'])){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $sub = $_POST['sub'];
+    $msg = $_POST['msg'];
+
+    if($name != "" && $email != "" && $phone != "" && $sub != "" && $msg != ""){
+        
+
+    $query = "INSERT INTO form (name, email, phone, subject, message) VALUES ('$name', '$email', '$phone', '$sub', '$msg')";
+    $data = mysqli_query($conn, $query);
+
+    if($data){
+        echo "Data Inserted Successfully";
+    } else {
+        echo "Data not Inserted";
+    }
+}
+else{
+    echo "<script>alert('Fill the form first');</script>";
+}
+
+}
+?>

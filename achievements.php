@@ -1,14 +1,17 @@
+<?php include("connection.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAS Academy | Log in</title>
+    <title>SAS Academy | Achievemets</title>
 
-    <link rel="stylesheet" href="Style Sheets/login.css">
+    <link rel="stylesheet" href="Style Sheets/achievements.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
+
 <body>
     <div class="small-screen">
         <p class="text">Rotate your phone to landscape mode</p>
@@ -66,37 +69,12 @@
     </header>
 
     <main>
-        <section class="container">
-            <div class="left">
-                <img src="Media/Logo.jpg" alt="">
-            </div>
-            <div class="right">
-                <h1>SAS Group</h1>
-                <h2>Welcome to SAS Academy</h2>
-                <div class="login-form">
-                    <div class="form-group usertype">
-                        <label>User Type:</label>
-                        <span><input type="radio" name="usertype" value="admin" id="admin"><label for="admin">Admin</label></span>
-                        <span><input type="radio" name="usertype" value="admin" id="teacher"><label for="teacher">Teacher</label></span>
-                        <span><input type="radio" name="usertype" value="admin" id="student"><label for="student">Student</label></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="username">Username:</label><br>
-                        <input type="text" id="username" placeholder="Enter your Username">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password:</label><br>
-                        <input type="password" id="password" placeholder="Enter your Password">
-                    </div>
-                    <button class="login-btn">Sign In</button>
-                    <div class="forgot-password">
-                        <a href="#">Forgot password</a>
-                    </div>
-                </div>
-                
-                <span id="contact"></span>
-            </div>
+        <section class="achieve">
+            <h2>OUR ACHIEVEMENTS</h2>
+            <p>Our SAS ACADEMY, with 100+ brilliant students of every classes and streams with UG applicants for JEE,WBJEE,other UG UNIVERSITY Exam candidates across their diversification. We will be your theoretical and practical guide throughout your journey of education for excellence. We ensure parents, schools and students to fly high in this challenging and dynamic learning environment. We enlighten the power of innovation the students are cultivating among themselves. As an institution, we know the rich educational factors with strong academic foundation with brain power and skills advancement of our students. The institute's dedication is to foster and hold hands in the educational arena with achievements of honors and knowledge.</p>
         </section>
+
+        <span id="contact"></span>
 
         <label for="click"><i class="fa-brands fa-rocketchat"></i></label>
         <input type="checkbox" id="click">
@@ -130,8 +108,8 @@
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="right">
-                    <p class="address">ADDRESS: J-22/C/1 Paharpur Road, Garden Reach, Kolkata-700024<br>
-                        LANDMARK: Near Sailasree Cinema Hall<br>
+                    <p class="address">ADDRESS: 1st Floor, M-126/J Paharpur Road, Kolkata-700024<br>
+                        LANDMARK: Beside Unipon Hospital<br>
                         BUSINESS WEBSITE: <a
                             href="https://sas-academy-education.business.site/">sas-academy-education.business.site</a><br>
                         CONTACT NO.: +919903002969, +919831158107
@@ -187,4 +165,35 @@
 
     <script src="Scripts/index.js"></script>
 </body>
+
 </html>
+<?php
+if(isset($_POST['submit'])){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $sub = $_POST['sub'];
+    $msg = $_POST['msg'];
+
+    if($name != "" && $email != "" && $phone != "" && $sub != "" && $msg != ""){
+        
+
+    $query = "INSERT INTO form (name, email, phone, subject, message) VALUES ('$name', '$email', '$phone', '$sub', '$msg')";
+    $data = mysqli_query($conn, $query);
+
+    if($data){
+        echo "Data Inserted Successfully";
+    } else {
+        echo "Data not Inserted";
+    }
+}
+else{
+    echo "<script>alert('Fill the form first');</script>";
+}
+
+
+}
+
+
+
+?>

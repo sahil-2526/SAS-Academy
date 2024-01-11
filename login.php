@@ -1,11 +1,37 @@
+<?php include("connection.php");
+if (isset($_POST['login'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $query = "SELECT * FROM users WHERE username='$username'";
+    $result = mysqli_query($conn, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $user = mysqli_fetch_assoc($result);
+
+        if (password_verify($password, $user['password'])) {
+            session_start();
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
+
+            header("Location: display.php");
+            exit();
+        } else {
+            echo "Invalid Password";
+        }
+    } else {
+        echo "User not found";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAS Academy | About</title>
+    <title>SAS Academy | Log in</title>
 
-    <link rel="stylesheet" href="Style Sheets/about.css">
+    <link rel="stylesheet" href="Style Sheets/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
@@ -15,23 +41,23 @@
     </div>
 
     <header>
-        <div class="logo"><a href="index.html"><img src="Media/Logo.jpg" alt=""></a></div>
+        <div class="logo"><a href="index.php"><img src="Media/Logo.jpg" alt=""></a></div>
         <nav>
             <ul>
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="index.php">Home</a>
                 </li>
                 <li>
-                    <a href="achievements.html">Achievemets</a>
+                    <a href="achievements.php">Achievemets</a>
                 </li>
                 <li>
-                    <a href="about.html">About</a>
+                    <a href="about.php">About</a>
                 </li>
                 <li>
                     <a href="#contact">Contact Us</a>
                 </li>
                 <li>
-                    <a href="login.html">Login</a>
+                    <a href="login.php">Login</a>
                 </li>
             </ul>
         </nav>
@@ -40,68 +66,62 @@
         <input type="checkbox" id="menu">
         <div class="menu-box">
             <div class="head">
-                <div class="logo"><a href="index.html"><img src="Media/Logo.jpg" alt=""></a></div>
+                <div class="logo"><a href="index.php"><img src="Media/Logo.jpg" alt=""></a></div>
                 <label for="menu">
                     <span class="material-symbols-outlined">close</span>
                 </label>
             </div>
             <ul>
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="index.php">Home</a>
                 </li>
                 <li>
-                    <a href="achievements.html">Achievemets</a>
+                    <a href="achievements.php">Achievemets</a>
                 </li>
                 <li>
-                    <a href="about.html">About</a>
+                    <a href="about.php">About</a>
                 </li>
                 <li>
                     <a href="#contact" onclick="hide()">Contact Us</a>
                 </li>
                 <li>
-                    <a href="login.html">Login</a>
+                    <a href="login.php">Login</a>
                 </li>
             </ul>
         </div>
     </header>
 
     <main>
-        <section class="vid">
-            <video src="Media/About/intro.mp4" width="100%" controls autoplay muted></video>
-        </section>
-        <section class="goals">
-            <h3>OUR GOALS</h3>
-            <ul>
-                <li>Identify specific ways to build atmosphere for coaching and steps towards the AIM.</li>
-                <li>Communication and participation from both the students and teachers for improving effectiveness.</li>
-                <li>Discovering GenZ techniques for more appropriate and impactful coaching aspects.</li>
-                <li>Develop motivation and communication skills with logic and upliftments for better education analysis.</li>
-            </ul>
-        </section>
-        <section class="gallery">
-            <h3>GALLERY</h3>
-            <div class="slider">
-                <div class="box"><img src="Media/About/comp.jpg" alt="" si></div>
-                <div class="box"><img src="Media/About/maths.jpg" alt=""></div>
-                <div class="box"><img src="Media/About/chemistry.jpg" alt=""></div>
-                <div class="box"><img src="Media/About/physics.jpg" alt=""></div>
-                <div class="box"><img src="Media/About/biology.jpg" alt=""></div>
-                <div class="box"><img src="Media/About/arts.jpg" alt=""></div>
-                <div class="box"><img src="Media/About/commerce.jpg" alt=""></div>
-                <div class="box"><img src="Media/About/jee.jp" alt=""></div>
-                <div class="box"><img src="Media/About/compsc-app.jpg" alt=""></div>
-                <div class="box"><img src="Media/About/economics.jpg" alt=""></div>
-                <div class="box"><img src="Media/About/engg-med.jpg" alt=""></div>
-                <div class="box"><img src="Media/About/tally-erp.jpg" alt=""></div>
-                <div class="box"><img src="Media/About/tax.jpg" alt=""></div>
+        <section class="container">
+            <div class="left">
+                <img src="Media/Logo.jpg" alt="">
             </div>
-
-            <div class="popup">
-                <span>&times;</span>
-                <img name="image" alt="">
+            <div class="right">
+                <h1>SAS Group</h1>
+                <h2>Welcome to SAS Academy</h2>
+                <div class="login-form">
+                    <div class="form-group usertype">
+                        <label>User Type:</label>
+                        <span><input type="radio" name="usertype" value="admin" id="admin"><label for="admin">Admin</label></span>
+                        <span><input type="radio" name="usertype" value="admin" id="teacher"><label for="teacher">Teacher</label></span>
+                        <span><input type="radio" name="usertype" value="admin" id="student"><label for="student">Student</label></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username:</label><br>
+                        <input type="text" id="username" placeholder="Enter your Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label><br>
+                        <input type="password" id="password" placeholder="Enter your Password">
+                    </div>
+                    <button class="login-btn">Sign In</button>
+                    <div class="forgot-password">
+                        <a href="#">Forgot password</a>
+                    </div>
+                </div>
+                
+                <span id="contact"></span>
             </div>
-
-            <span id="contact"></span>
         </section>
 
         <label for="click"><i class="fa-brands fa-rocketchat"></i></label>
@@ -119,7 +139,7 @@
         </div>
     </main>
 
-   <footer>
+    <footer>
         <div class="bgc">
             <h3>LOCATION</h3>
             <div class="block">
@@ -130,11 +150,14 @@
                         <a href="" target="_blank"><img src="Media/whatsapp.png" alt=""></i></a>
                         <a href="" target="_blank"><img src="Media/gmail.png" alt=""></a>
                     </div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d268.2168752407035!2d88.-2891306535923!3d22.538113891386022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1702915747160!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d268.2168752407035!2d88.-2891306535923!3d22.538113891386022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1702915747160!5m2!1sen!2sin"
+                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="right">
-                    <p class="address">ADDRESS: J-22/C/1 Paharpur Road, Garden Reach, Kolkata-700024<br>
-                        LANDMARK: Near Sailasree Cinema Hall<br>
+                    <p class="address">ADDRESS: 1st Floor, M-126/J Paharpur Road, Kolkata-700024<br>
+                        LANDMARK: Beside Unipon Hospital<br>
                         BUSINESS WEBSITE: <a
                             href="https://sas-academy-education.business.site/">sas-academy-education.business.site</a><br>
                         CONTACT NO.: +919903002969, +919831158107
@@ -191,3 +214,34 @@
     <script src="Scripts/index.js"></script>
 </body>
 </html>
+
+<?php
+if(isset($_POST['submit'])){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $sub = $_POST['sub'];
+    $msg = $_POST['msg'];
+
+    if($name != "" && $email != "" && $phone != "" && $sub != "" && $msg != ""){
+        
+
+    $query = "INSERT INTO form (name, email, phone, subject, message) VALUES ('$name', '$email', '$phone', '$sub', '$msg')";
+    $data = mysqli_query($conn, $query);
+
+    if($data){
+        echo "Data Inserted Successfully";
+    } else {
+        echo "Data not Inserted";
+    }
+}
+else{
+    echo "<script>alert('Fill the form first');</script>";
+}
+
+
+}
+
+
+
+?>
